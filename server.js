@@ -5,14 +5,14 @@
  * Module dependencies.
  */
 
-const app = require('./app');
+const app = require('./server/config/app');
 const debug = require('debug')('portfolio:server');
 const http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
-
+// process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 

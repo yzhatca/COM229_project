@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include  ../../partials/head%>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+    <title>Zhihao Yu Personal website</title>
+    <script src="https://kit.fontawesome.com/093ba5dd7e.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body onload="myFunction()">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <!-- Main Content -->
+    <main class="container">
+        <div>
+            <h1 style="margin:0 500px;">Contact List</h1>
+            <br>
+            <a href="/contacts-list/add" role="button" style="margin: 300px;">
+                <i class="fas fa-plus-circle"></i> Add a Contact</a>
+            <table class="styled-table"  id="contactT">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count = 0; count < contactsList.length; count++) { %>
+                    <tr id="content">
+                        <td><%= contactsList[count].name %></td>
+                        <td><%= contactsList[count].email %></td>
+                        <td><%= contactsList[count].phone %></td>
+                        <td><%= contactsList[count].message %></td>
+                        <td> <a href="/contacts-list/edit/<%= contactsList[count]._id %>"
+                                class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i> Edit</a></td>
+                        <td> <a href="/contacts-list/delete/<%= contactsList[count]._id %>"
+                                class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete</a></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+                <tr id="btn3">
+
+                </tr>
+            </table>
+        </div>
+        <div class="copyright">
+            <p>Copyright @ yzh </p>
+        </div>
+    </main>
+
+    <script>
+        // sort table alphabetically
+        function myFunction() {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("contactT");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[0];
+                    y = rows[i + 1].getElementsByTagName("TD")[0];
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>

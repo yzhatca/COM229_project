@@ -1,0 +1,40 @@
+<!-- // Name: Zhihao Yu
+// ID: 301305633 -->
+<% if(typeof displayName == 'string' && displayName) { %>
+<li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome, <%= displayName %></li>
+<% } else { %> <% } %>
+<script src="https://kit.fontawesome.com/093ba5dd7e.js" crossorigin="anonymous"></script>
+<div class="contanier">
+    <nav>
+        <img src="../../img/images.jpeg" alt="" class="logo">
+        <ul id="sideMenu">
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About Me</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="services">Services</a></li>
+            <li><a href="contact">Contact Me</a></li>
+            <li><a href="/contacts-list">Contact List</a></li>
+            <% if(typeof displayName == 'string' && displayName) { %>
+            <li class="nav-item"><a href="/logout" class="nav-link">
+                    <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+            <% } else { %>
+            <li class="nav-item"><a href="/login" class="nav-link">
+                    <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+            <% } %>
+            <i class="fas fa-times-square" onclick="closeMenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+    </nav>
+</div>
+
+<script>
+    var sidemenu = document.getElementById("sideMenu");
+
+    function openMenu() {
+        sidemenu.style.right = "0";
+    }
+
+    function closeMenu() {
+        sidemenu.style.right = "-200px";
+    }
+</script>

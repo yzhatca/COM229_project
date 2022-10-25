@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include  ../../partials/head%>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+    <title>Zhihao Yu Personal website</title>
+    <script src="https://kit.fontawesome.com/093ba5dd7e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <main>
+        <!-- Message Area -->
+        <% if(messages.length > 0) {%>
+        <div>
+            <%= messages %>
+        </div>
+        <% } %>
+        <div class="login-table">
+            <p class="sign" align="center">please Login</p>
+            <form method="POST" autocomplete="off" class="form1">
+                <input type="text" class="un" name="username" placeholder="Enter username" id="username" required
+                    autofocus>
+                <input type="password" class="pass" name="password" placeholder="Enter password" id="password" required>
+                <p class="reg" align="center"> or <a href="/register">Register Here</a></p>
+                <input type="submit" class="submit" value="Login"><a href="/">
+                    <input type="button" class="cancel" value="Cancel">
+                </a>
+            </form>
+        </div>
+       
+    </main>
+    <footer>
+        <% include ../../partials/footer %>
+    </footer>
+</body>

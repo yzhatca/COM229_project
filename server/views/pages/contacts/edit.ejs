@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include  ../../partials/head%>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css" />
+    <title>Zhihao Yu Personal website</title>
+    <script src="https://kit.fontawesome.com/093ba5dd7e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <!-- Content for the Add page -->
+    <main class="container">
+        <h1 style="margin:10px 480px;">Edit Contacts</h1>
+        <div class="edit-page">
+            <br>
+            <form method="POST" autocomplete="off" class="form2">
+                <div><span>Contact Name:</span><input type="text" class="na" id="nameTextField"
+                        placeholder="Enter the contact's name" name="name" value="<%= contacts.name %>" required><br>
+                </div>
+                <div><span>Email:</span><input type="email" class="na" id="emailTextField"
+                        placeholder="Enter the contacts Email" name="email" value="<%= contacts.email %>" required><br>
+                </div>
+                <div> <span>Message:</span>
+                    <textarea type="text" class="me" id="descriptionTextArea"
+                        placeholder="Enter the a brief message of the book" name="message" required>
+                    <%= contacts.message %></textarea>
+                </div>
+                <div><span>Phone:</span><input type="text" class="na" id="phoneTextField"
+                        placeholder="Enter the contact's phone" name="phone" value="<%= contacts.phone %>" required><br>
+                </div>
+                <div>  <input type="submit" class="submit" value="Submit">
+                    <a href="/contacts-list">
+                        <input type="button" class="cancel" value="Cancel">
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="copyright">
+            <p>Copyright @ yzh </p>
+        </div>
+    </main>
+    <footer style="display: none">
+        <% include ../../partials/footer %>
+    </footer>

@@ -1,0 +1,5 @@
+Link of Heroku:https://yzhportfolio.herokuapp.com/
+
+My github Repository:https://github.com/yzhatca/COM229_project.git
+
+Video presentation: https://www.youtube.com/watch?v=rSLkztHMryM

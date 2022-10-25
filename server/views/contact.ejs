@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <% include ../partials/head %>
+    <% include partials/head %>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <% include ../partials/header %>
+        <% include partials/header %>
     </header>
     <main>
         <div id="contact">
@@ -40,6 +40,7 @@
                         <form name="ddcomment" method="post" action="posts">
                             <input type="text" name="name" placeholder="Your Name" required>
                             <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="text" name="phone" placeholder="Your Phone" required>
                             <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                             <button type="submit" class="btn btn2" onclick="myAlert()">Submit</button>
                         </form>
@@ -57,7 +58,7 @@
     </script>
 
     <footer>
-        <% include ../partials/footer %>
+        <% include partials/footer %>
     </footer>
 </body>
 
