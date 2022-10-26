@@ -510,7 +510,7 @@ nav .fa-solid {
 /* --------login--------- */
 .login-table {
     background-color: #FFFFFF;
-    width: 400px;
+    width: 450px;
     height: 500px;
     margin: auto;
     border-radius: 1.5em;
@@ -616,11 +616,7 @@ font-family: 'Ubuntu', sans-serif;
       box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   }
 
-.forgot {
-    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-    color: #E1BEE7;
-    padding-top: 15px;
-}
+
 
 /* a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);

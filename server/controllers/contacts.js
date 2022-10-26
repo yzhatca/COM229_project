@@ -67,7 +67,6 @@ module.exports.displayEditPage = (req, res, next) => {
 
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id
-    console.log('123')
 
     let updatedcontacts = contacts({
         "_id": id,
@@ -82,8 +81,7 @@ module.exports.processEditPage = (req, res, next) => {
     contacts.updateOne({
         _id: id
     }, updatedcontacts, (err) => {
-        console.log('456')
-        console.log(updatedcontacts)
+        // console.log(updatedcontacts)
         if (err) {
             console.log(err);
             res.end(err);

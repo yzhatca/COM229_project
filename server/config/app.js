@@ -55,6 +55,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 //setup express session
 app.use(session({
+  //token password
   secret: "SomeSecret",
   saveUninitialized: false,
   resave: false
@@ -77,7 +78,7 @@ let User = userModel.User;
 // implement a User Authentication Strategy
 passport.use(User.createStrategy());
 
-// serialize and deserialize the User info
+//serialize and deserialize the User info
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
