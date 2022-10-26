@@ -12,11 +12,11 @@ const logger = require('morgan');
 // modules for authentication
 let session = require('express-session');
 let passport = require('passport');
-
+// JWT strategy
 let passportJWT = require('passport-jwt');
 let JWTStrategy = passportJWT.Strategy;
 let ExtractJWT = passportJWT.ExtractJwt;
-
+// passport local strategy
 let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
 let flash = require('connect-flash');
@@ -78,14 +78,16 @@ let User = userModel.User;
 // implement a User Authentication Strategy
 passport.use(User.createStrategy());
 
-//serialize and deserialize the User info
+//serialize and deserialize the User info, define which data need to be stored in session
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 let jwtOptions = {};
+//store the token in session
 jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = DB.Secret;
 
+// get the user by token id, compare the data 
 let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
   User.findById(jwt_payload.id)
     .then(user => {

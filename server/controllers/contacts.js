@@ -10,7 +10,7 @@ module.exports.displaycontactsList = (req, res, next) => {
         if (err) {
             return console.error(err);
         } else {
-            console.log(contactsList);
+            // console.log(contactsList);
             res.render('pages/contacts/list', {
                 title: 'contacts',
                 contactsList: contactsList,
