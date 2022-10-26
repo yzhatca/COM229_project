@@ -2,4 +2,8 @@ Link of Heroku:https://yzhportfolio.herokuapp.com/
 
 My github Repository:https://github.com/yzhatca/COM229_project.git
 
-Video presentation: https://www.youtube.com/watch?v=rSLkztHMryM
+Video presentation: https://www.youtube.com/watch?v=C6kVO8dTubw&t=2s
+
+username: admin
+password:123
+or just register a new one :)
