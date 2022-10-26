@@ -2,15 +2,7 @@ let express = require('express');
 let router = express.Router();
 
 let indexController = require('../controllers/index');
-function requireAuth(req, res, next)
-{
-    // check if the user is logged in
-    if(!req.isAuthenticated())
-    {
-        return res.redirect('/login');
-    }
-    next();
-}
+
 /* GET home page. */
 router.get('/', indexController.displayHomePage);
 
